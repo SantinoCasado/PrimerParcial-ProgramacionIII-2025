@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistema de Gestión de Pinturas - UTN</title>
+
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/manejadora.js"></script>
+  </head>
+
+  <body class="bg-light">
+    <!-- Barra de navegación fija -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="./img/utnLogo.png"
+            alt="UTN Logo"
+            width="40"
+            height="40"
+            class="me-2"
+          />
+          <span class="fw-bold">Sistema de Pinturas UTN</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                id="nav-inicio"
+                class="nav-link active"
+                href="#"
+                data-tab="inicio"
+              >
+                <i class="bi bi-house-fill me-1"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-alta" class="nav-link" href="#" data-tab="alta">
+                <i class="bi bi-plus-circle me-1"></i>Alta
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-listado" class="nav-link" href="#" data-tab="listado">
+                <i class="bi bi-list-ul me-1"></i>Listado
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                id="nav-estadisticas"
+                class="nav-link"
+                href="#"
+                data-tab="estadisticas"
+              >
+                <i class="bi bi-graph-up me-1"></i>Estadísticas
+              </a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="btn-modo-oscuro"
+                class="btn btn-outline-light btn-sm ms-2"
+                title="Alternar modo oscuro/claro"
+              >
+                <i class="bi bi-moon me-1"></i>Modo Oscuro
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenedor principal  -->
+    <div class="container-fluid" style="padding-top: 80px">
+      <!-- Header de bienvenida -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div
+            class="p-4 rounded"
+            style="
+              background-color: var(--color-medium);
+              color: var(--color-light);
+            "
+          >
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h2 class="mb-1">
+                  <i class="bi bi-paint-fill me-2"></i>
+                  Sistema de Gestión de Pinturas
+                </h2>
+                <p class="mb-0 opacity-75">
+                  Universidad Tecnológica Nacional - Programación III
+                </p>
+              </div>
+              <div class="col-md-4 text-end">
+                <div class="d-flex justify-content-end align-items-center">
+                  <div class="me-3">
+                    <small class="opacity-75">Estudiante:</small><br />
+                    <strong>Casado Santino</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido principal con tabs -->
+      <div class="row">
+        <div class="col-12">
+          <!-- Tab de Inicio -->
+          <div id="tab-inicio" class="tab-content-custom">
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-dashboard-alta h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <div
+                      class="icon-circle rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                    >
+                      <i class="bi bi-plus-circle"></i>
+                    </div>
+                    <h5 class="card-title">Alta de Pinturas</h5>
+                    <p class="card-text">
+                      Agrega nuevas pinturas al sistema con validación completa
+                    </p>
+                    <button
+                      id="btn-ir-alta"
+                      class="btn btn-light"
+                      data-tab="alta"
+                    >
+                      <i class="bi bi-arrow-right me-1"></i>Ir a Alta
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div
+                  class="card card-dashboard-listado h-100 border-0 shadow-sm"
+                >
+                  <div class="card-body text-center">
+                    <div
+                      class="icon-circle rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                    >
+                      <i class="bi bi-list-ul"></i>
+                    </div>
+                    <h5 class="card-title">Listado y Gestión</h5>
+                    <p class="card-text">
+                      Visualiza, modifica y elimina pinturas existentes
+                    </p>
+                    <button
+                      id="btn-ir-listado"
+                      class="btn btn-light"
+                      data-tab="listado"
+                    >
+                      <i class="bi bi-arrow-right me-1"></i>Ver Listado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div
+                  class="card card-dashboard-estadisticas h-100 border-0 shadow-sm"
+                >
+                  <div class="card-body text-center">
+                    <div
+                      class="icon-circle rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                    >
+                      <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h5 class="card-title">Estadísticas</h5>
+                    <p class="card-text">
+                      Consulta promedios, filtros y análisis de datos
+                    </p>
+                    <button
+                      id="btn-ir-estadisticas"
+                      class="btn btn-light"
+                      data-tab="estadisticas"
+                    >
+                      <i class="bi bi-arrow-right me-1"></i>Ver Stats
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab de Alta -->
+          <div id="tab-alta" class="tab-content-custom" style="display: none">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-xl-6">
+                <div class="card border-0 shadow">
+                  <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                      <i class="bi bi-plus-circle me-2"></i>
+                      Formulario de Alta/Modificación
+                    </h5>
+                  </div>
+                  <div class="card-body p-4">
+                    <form
+                      id="frmFormulario"
+                      class="needs-validation"
+                      novalidate
+                    >
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="inputID" class="form-label fw-semibold">
+                            <i class="bi bi-hash text-muted me-1"></i>ID (solo
+                            información):
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputID"
+                            required
+                            readonly
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label
+                            for="inputMarca"
+                            class="form-label fw-semibold"
+                          >
+                            <i class="bi bi-tags text-muted me-1"></i>Marca:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputMarca"
+                            minlength="2"
+                            maxlength="50"
+                            required
+                          />
+                          <div
+                            class="invalid-feedback"
+                            id="error-inputMarca"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <label
+                            for="inputPrecio"
+                            class="form-label fw-semibold"
+                          >
+                            <i class="bi bi-currency-dollar text-muted me-1"></i
+                            >Precio (USD):
+                          </label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="inputPrecio"
+                            min="50"
+                            max="500"
+                            step="50"
+                            required
+                          />
+                          <div
+                            class="invalid-feedback"
+                            id="error-inputPrecio"
+                          ></div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label
+                            for="inputColor"
+                            class="form-label fw-semibold"
+                          >
+                            <i class="bi bi-palette text-muted me-1"></i>Color:
+                          </label>
+                          <input
+                            type="color"
+                            class="form-control form-control-color"
+                            id="inputColor"
+                            value="#ff0000"
+                            required
+                          />
+                          <div
+                            class="invalid-feedback"
+                            id="error-inputColor"
+                          ></div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label
+                            for="inputCantidad"
+                            class="form-label fw-semibold"
+                          >
+                            <i class="bi bi-box-seam text-muted me-1"></i
+                            >Cantidad:
+                          </label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="inputCantidad"
+                            min="1"
+                            max="400"
+                            required
+                          />
+                          <div
+                            class="invalid-feedback"
+                            id="error-inputCantidad"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex flex-wrap gap-2 justify-content-center"
+                      >
+                        <button
+                          type="button"
+                          id="btnAgregar"
+                          class="btn btn-primary px-4"
+                        >
+                          <i class="bi bi-plus-circle me-1"></i>Agregar
+                        </button>
+                        <button
+                          type="button"
+                          id="btnModificar"
+                          class="btn btn-warning px-4"
+                        >
+                          <i class="bi bi-pencil-square me-1"></i>Modificar
+                        </button>
+                        <button
+                          type="button"
+                          id="btnLimpiar"
+                          class="btn btn-secondary px-4"
+                        >
+                          <i class="bi bi-eraser me-1"></i>Limpiar
+                        </button>
+                        <button
+                          type="button"
+                          id="btnFiltros"
+                          class="btn btn-info px-4"
+                        >
+                          <i class="bi bi-funnel me-1"></i>Filtros
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab de Listado -->
+          <div
+            id="tab-listado"
+            class="tab-content-custom"
+            style="display: none"
+          >
+            <div class="row">
+              <div class="col-12">
+                <div id="divListado" class="border-0"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab de Estadísticas -->
+          <div
+            id="tab-estadisticas"
+            class="tab-content-custom"
+            style="display: none"
+          >
+            <div class="row">
+              <!-- Solo funcionalidades de estadísticas -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <div
+                      class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i
+                        class="bi bi-calculator text-success"
+                        style="font-size: 1.5rem"
+                      ></i>
+                    </div>
+                    <h6 class="card-title">Precio Promedio</h6>
+                    <button
+                      id="btn-calcular-promedio"
+                      class="btn btn-outline-success btn-sm"
+                    >
+                      <i class="bi bi-play-fill me-1"></i>Calcular
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <div
+                      class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i
+                        class="bi bi-graph-up text-primary"
+                        style="font-size: 1.5rem"
+                      ></i>
+                    </div>
+                    <h6 class="card-title">Estadísticas Completas</h6>
+                    <button
+                      id="btn-estadisticas-completas"
+                      class="btn btn-outline-primary btn-sm"
+                    >
+                      <i class="bi bi-bar-chart me-1"></i>Ver Análisis
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <div
+                      class="bg-secondary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i
+                        class="bi bi-download text-secondary"
+                        style="font-size: 1.5rem"
+                      ></i>
+                    </div>
+                    <h6 class="card-title">Exportar CSV</h6>
+                    <button
+                      id="btn-exportar-csv"
+                      class="btn btn-outline-secondary btn-sm"
+                    >
+                      <i class="bi bi-file-earmark-spreadsheet me-1"></i
+                      >Descargar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-header bg-light">
+                    <h6 class="mb-0">
+                      <i class="bi bi-graph-up me-2"></i>
+                      Panel de Control
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="row text-center">
+                      <div class="col-md-3 mb-3">
+                        <div class="border rounded p-3">
+                          <h4 class="text-primary mb-1" id="total-pinturas">
+                            0
+                          </h4>
+                          <small class="text-muted">Total Pinturas</small>
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <div class="border rounded p-3">
+                          <h4 class="text-success mb-1" id="precio-promedio">
+                            $0.00
+                          </h4>
+                          <small class="text-muted">Precio Promedio</small>
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <div class="border rounded p-3">
+                          <h4 class="text-warning mb-1" id="precio-maximo">
+                            $0.00
+                          </h4>
+                          <small class="text-muted">Precio Máximo</small>
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <div class="border rounded p-3">
+                          <h4 class="text-info mb-1" id="precio-minimo">
+                            $0.00
+                          </h4>
+                          <small class="text-muted">Precio Mínimo</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Sistema de Gestión de Pinturas</h6>
+            <p class="mb-0 small text-muted">
+              Universidad Tecnológica Nacional - Programación III
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0 small">© 2025 - Primer Parcial</p>
+            <p class="mb-0 small text-muted">Desarrollado con Bootstrap 5</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

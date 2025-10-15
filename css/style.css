@@ -1,0 +1,484 @@
+/* ==================== VARIABLES Y CONFIGURACIÓN GLOBAL ==================== */
+:root {
+  --color-dark: #222831;
+  --color-medium: #393e46;
+  --color-accent: #948979;
+  --color-light: #dfd0b8;
+}
+
+/* ==================== 2. ESTILOS BASE ==================== */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+/* ==================== NAVEGACIÓN ==================== */
+.navbar {
+  background-color: var(--color-dark) !important;
+}
+
+.navbar-brand {
+  color: var(--color-light) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-light) !important;
+  margin: 0 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--color-medium);
+  color: var(--color-light) !important;
+}
+
+.navbar-nav .nav-link.active {
+  background-color: var(--color-accent);
+  color: var(--color-dark) !important;
+}
+
+/* ==================== CARDS SISTEMA ==================== */
+/* Cards básicos */
+.card {
+  border: 2px solid var(--color-accent) !important;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+/* Cards del dashboard - permitir fondos personalizados */
+#tab-inicio .card {
+  border: none !important;
+  background-color: initial !important;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
+
+#tab-inicio .card-body {
+  background-color: transparent !important;
+  padding: 20px;
+}
+
+.card-header {
+  background-color: var(--color-medium) !important;
+  color: var(--color-light) !important;
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.card-body {
+  background-color: white;
+  padding: 20px;
+}
+
+#tab-inicio .card:hover {
+  transform: scale(1.05);
+}
+
+/* Elementos comunes de iconos */
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+}
+
+.icon-circle i {
+  font-size: 2rem;
+}
+
+/* Card Alta de Pinturas  */
+#tab-inicio .card-dashboard-alta {
+  background-color: #222831 !important;
+  border: 3px solid #222831 !important;
+}
+
+#tab-inicio .card-dashboard-alta .card-body {
+  background-color: #222831 !important;
+}
+
+.card-dashboard-alta .card-title {
+  color: white !important;
+  font-weight: bold;
+}
+
+.card-dashboard-alta .card-text {
+  color: #dfd0b8 !important;
+}
+
+.card-dashboard-alta .icon-circle {
+  background-color: white !important;
+  border: 3px solid #222831;
+}
+
+.card-dashboard-alta .icon-circle i {
+  color: #222831 !important;
+}
+
+.card-dashboard-alta .btn {
+  background-color: white !important;
+  color: #222831 !important;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.card-dashboard-alta .btn:hover {
+  background-color: #dfd0b8 !important;
+  color: #222831 !important;
+}
+
+/* Card Listado y Gestión */
+#tab-inicio .card-dashboard-listado {
+  background-color: #393e46 !important;
+  border: 3px solid #393e46 !important;
+}
+
+#tab-inicio .card-dashboard-listado .card-body {
+  background-color: #393e46 !important;
+}
+
+.card-dashboard-listado .card-title {
+  color: white !important;
+  font-weight: bold;
+}
+
+.card-dashboard-listado .card-text {
+  color: #dfd0b8 !important;
+}
+
+.card-dashboard-listado .icon-circle {
+  background-color: white !important;
+  border: 3px solid #393e46;
+}
+
+.card-dashboard-listado .icon-circle i {
+  color: #393e46 !important;
+}
+
+.card-dashboard-listado .btn {
+  background-color: white !important;
+  color: #393e46 !important;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.card-dashboard-listado .btn:hover {
+  background-color: #dfd0b8 !important;
+  color: #393e46 !important;
+}
+
+/* Card Estadísticas */
+#tab-inicio .card-dashboard-estadisticas {
+  background-color: #948979 !important;
+  border: 3px solid #948979 !important;
+}
+
+#tab-inicio .card-dashboard-estadisticas .card-body {
+  background-color: #948979 !important;
+}
+
+.card-dashboard-estadisticas .card-title {
+  color: white !important;
+  font-weight: bold;
+}
+
+.card-dashboard-estadisticas .card-text {
+  color: #222831 !important;
+}
+
+.card-dashboard-estadisticas .icon-circle {
+  background-color: white !important;
+  border: 3px solid #948979;
+}
+
+.card-dashboard-estadisticas .icon-circle i {
+  color: #948979 !important;
+}
+
+.card-dashboard-estadisticas .btn {
+  background-color: white !important;
+  color: #948979 !important;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.card-dashboard-estadisticas .btn:hover {
+  background-color: #dfd0b8 !important;
+  color: #948979 !important;
+}
+
+/* ==================== BOTONES ==================== */
+.btn-primary {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-medium);
+  border-color: var(--color-medium);
+}
+
+.btn-success {
+  background-color: var(--color-medium);
+  border-color: var(--color-medium);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-warning {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn-warning:hover {
+  background-color: var(--color-medium);
+  border-color: var(--color-medium);
+  color: white;
+}
+
+.btn-info {
+  background-color: var(--color-medium);
+  border-color: var(--color-medium);
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  color: white;
+}
+
+/* ==================== 7. FORMULARIOS ==================== */
+.form-control {
+  border: 2px solid var(--color-accent);
+  background-color: white;
+  color: var(--color-dark);
+}
+
+.form-control:focus {
+  border-color: var(--color-medium);
+  background-color: white;
+  box-shadow: none;
+}
+
+.form-label {
+  color: var(--color-dark);
+  font-weight: bold;
+}
+
+.form-control-color {
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  border: 2px solid var(--color-accent);
+}
+
+/* Estados de validación */
+.is-valid {
+  border-color: var(--color-accent) !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 14px;
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+/* ==================== 8. TABLAS ==================== */
+.table th {
+  background-color: var(--color-medium);
+  color: var(--color-light);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.table td {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--color-light);
+}
+
+.color-square {
+  border: 1px solid var(--color-accent);
+}
+
+/* ==================== 9. ALERTAS ==================== */
+.alert {
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/* ==================== 10. FOOTER ==================== */
+footer {
+  background-color: var(--color-dark) !important;
+  color: var(--color-light);
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* ==================== 11. UTILIDADES DE TEXTO ==================== */
+.text-primary {
+  color: var(--color-dark) !important;
+}
+
+.text-success {
+  color: var(--color-medium) !important;
+}
+
+.text-warning {
+  color: var(--color-accent) !important;
+}
+
+.text-info {
+  color: var(--color-dark) !important;
+}
+
+/* ==================== 12. MODO OSCURO ==================== */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e !important;
+  border-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .card-header {
+  background-color: #2d2d2d !important;
+  border-color: #444444 !important;
+}
+
+.dark-mode .card-body {
+  background-color: #1e1e1e !important;
+}
+
+.dark-mode .table {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .table th {
+  background-color: #2d2d2d !important;
+  border-color: #444444 !important;
+}
+
+.dark-mode .table td {
+  border-color: #444444 !important;
+}
+
+.dark-mode .form-control {
+  background-color: #2d2d2d !important;
+  border-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #2d2d2d !important;
+  border-color: var(--color-accent) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .modal-content {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .modal-header {
+  border-color: #444444 !important;
+}
+
+.dark-mode .modal-footer {
+  border-color: #444444 !important;
+}
+
+.dark-mode .list-group-item {
+  background-color: #2d2d2d !important;
+  border-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+/* Cards del dashboard en modo oscuro */
+.dark-mode #tab-inicio .card-dashboard-alta {
+  background-color: #2d2d2d !important;
+  border-color: var(--color-dark) !important;
+}
+
+.dark-mode #tab-inicio .card-dashboard-listado {
+  background-color: #2d2d2d !important;
+  border-color: var(--color-medium) !important;
+}
+
+.dark-mode #tab-inicio .card-dashboard-estadisticas {
+  background-color: #2d2d2d !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* ==================== 13. RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+    padding: 8px 16px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Estadísticas responsive */
+  .col-md-6.col-lg-4 {
+    margin-bottom: 1rem;
+  }
+}
