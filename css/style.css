@@ -8,7 +8,8 @@
 
 /* ==================== 2. ESTILOS BASE ==================== */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   background-color: var(--color-light);
   color: var(--color-dark);
   margin: 0;
@@ -17,7 +18,12 @@ body {
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.3;
 }
@@ -426,6 +432,36 @@ footer {
   color: #ffffff !important;
 }
 
+.dark-mode .form-label {
+  color: #ffffff !important;
+}
+
+/* Iconos y emojis en modo oscuro */
+.dark-mode .form-label i {
+  color: #ffffff !important;
+}
+
+.dark-mode .text-muted {
+  color: #cccccc !important;
+}
+
+.dark-mode .bi {
+  color: #ffffff !important;
+}
+
+.dark-mode .form-label .bi {
+  color: #cccccc !important;
+}
+
+/* Título de bienvenida en modo oscuro */
+.dark-mode .display-5 {
+  color: #ffffff !important;
+}
+
+.dark-mode .text-muted {
+  color: #cccccc !important;
+}
+
 .dark-mode .modal-content {
   background-color: #1e1e1e !important;
   color: #ffffff !important;
@@ -480,5 +516,79 @@ footer {
   /* Estadísticas responsive */
   .col-md-6.col-lg-4 {
     margin-bottom: 1rem;
+  }
+
+  /* Header responsive */
+  #header-bienvenida .p-4 {
+    padding: 20px 15px !important;
+  }
+
+  #header-bienvenida h1 {
+    font-size: 1.5rem;
+  }
+
+  #header-bienvenida h2 {
+    font-size: 1rem;
+  }
+
+  /* Título de bienvenida responsive */
+  .display-5 {
+    font-size: 2rem !important;
+  }
+
+  .lead.fs-4 {
+    font-size: 1.1rem !important;
+  }
+
+  /* Contenedor principal responsive */
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Cards responsive */
+  .card-dashboard-alta,
+  .card-dashboard-listado,
+  .card-dashboard-estadisticas {
+    margin-bottom: 20px;
+  }
+
+  /* Formulario responsive */
+  .form-control {
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+
+  /* Tabla responsive */
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 4px;
+  }
+}
+
+/* Responsive extra pequeño (menos de 576px) */
+@media (max-width: 575px) {
+  .display-5 {
+    font-size: 1.75rem !important;
+  }
+
+  .lead.fs-4 {
+    font-size: 1rem !important;
+  }
+
+  .col-md-6.col-lg-4 {
+    margin-bottom: 15px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  /* Ocultar algunos elementos en pantallas muy pequeñas */
+  .d-none.d-sm-inline {
+    display: none !important;
   }
 }
