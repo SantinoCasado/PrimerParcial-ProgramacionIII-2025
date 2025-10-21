@@ -24,7 +24,10 @@ PrimerParcial_PrograII_CasadoSantino/
 │   └── style.css               # Estilos personalizados y variables CSS
 │
 ├── 📁 js/
-│   └── manejadora.js           # Lógica principal de la aplicación
+│   └── api.js           
+|   └── app.js
+|   └── ui.js
+|   └── utils.js
 │
 ├── 📁 img/
 │   └── (imágenes del proyecto) # Capturas de pantalla y recursos
